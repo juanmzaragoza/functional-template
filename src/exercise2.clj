@@ -2,7 +2,7 @@
 
 (defn only-greater-than-five
   "Returns only numbers greather than five."
-  [x]
+  [numbers]
   (filter (fn [n] (< 5 n)) numbers)
 )
 
