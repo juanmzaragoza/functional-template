@@ -11,8 +11,8 @@
   (testing "Tests apply incrementfunction to a vector and returns a vector."
     (is (= (fmap inc [1 2 3 4]) [2 3 4 5]))))
 
-(deftest fmap-returns-a-dictonary
-  (testing "Tests apply increment function to a dictonary and returns a dictonary."
+(deftest fmap-returns-a-hash-map
+  (testing "Tests apply increment function to a hash map and returns a hash map."
     (is (= (fmap inc {:a 1 :b 2}) {:a 2 :b 3}))))
 
 

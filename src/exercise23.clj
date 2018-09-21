@@ -5,13 +5,18 @@
 
 ;into - agarra un conjunto de datos y los mete 
 ;dentro de una estructura
-(defmethod fmap java.lang.String [func coll]
- "Soy un String")
+(defmethod fmap clojure.lang.PersistentList [func coll]
+	(map func coll))
 
 (defmethod fmap clojure.lang.PersistentVector [func coll]
 	(map func coll))
 
+(defmethod fmap clojure.lang.PersistentArrayMap [func coll]
+	(into {} 
+		(map (fn [[key value]] [key (func value)])
+            coll)))
+
 (defmethod fmap :default [func coll]
- "Soy un default")
+	"Soy un default")
 
 
